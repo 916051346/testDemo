@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "WBTabBarController.h"
 @interface AppDelegate ()
 
 @end
@@ -20,41 +20,12 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     //
-    UITabBarController *tabBarVC = [[UITabBarController alloc]init];
+    WBTabBarController *tabBarVC = [[WBTabBarController alloc]init];
     
     //添加窗口的根控制器
     self.window.rootViewController = tabBarVC;
     
-    //首页
-    UITableViewController *table = [[UITableViewController alloc]init];
-    table.view.backgroundColor = [UIColor blueColor];
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:table];
-    
-    [tabBarVC addChildViewController:nav];
-    
-    
-    //选表
-    UIViewController *vc = [[UIViewController alloc]init];
-    vc.view.backgroundColor = [UIColor grayColor];
-    UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:vc];
-    
-    [tabBarVC addChildViewController:nav2];
-    
-    //购物车
-    UIViewController *vc2 = [[UIViewController alloc]init];
-    vc2.view.backgroundColor = [UIColor redColor];
-    UINavigationController *nav3 = [[UINavigationController alloc]initWithRootViewController:vc2];
-    
-    [tabBarVC addChildViewController:nav3];
-    
-    //我
-    UIViewController *vc3 = [[UIViewController alloc]init];
-    vc3.view.backgroundColor = [UIColor orangeColor];
-    UINavigationController *nav4 = [[UINavigationController alloc]initWithRootViewController:vc3];
-    
-    [tabBarVC addChildViewController:nav4];
-    
-    //显示窗口
+        //显示窗口
     [self.window makeKeyAndVisible];
     return YES;
 }
